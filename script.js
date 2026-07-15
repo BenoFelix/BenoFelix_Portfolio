@@ -30,3 +30,40 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+const requirementForm = document.getElementById("requirementForm");
+
+requirementForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(requirementForm);
+
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const company = formData.get("company") || "Not provided";
+  const projectType = formData.get("projectType");
+  const message = formData.get("message");
+
+  const subject = `AI Project Requirement - ${projectType}`;
+
+  const body = `
+Hello Beno,
+
+I would like to discuss an AI project requirement.
+
+Name: ${name}
+Email: ${email}
+Company / Organization: ${company}
+Project Type: ${projectType}
+
+Requirement:
+${message}
+
+Regards,
+${name}
+`;
+
+  const mailtoLink = `mailto:REPLACE_WITH_BENO_EMAIL?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoLink;
+});
