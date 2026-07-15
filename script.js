@@ -63,7 +63,7 @@ Regards,
 ${name}
 `;
 
-  const mailtoLink = `mailto:REPLACE_WITH_BENO_EMAIL?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const mailtoLink = `mailto:benofelix2002@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   window.location.href = mailtoLink;
 });
