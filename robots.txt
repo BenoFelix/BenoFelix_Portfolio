@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benofelix.github.io/BenoFelix_Portfolio/sitemap.xml
